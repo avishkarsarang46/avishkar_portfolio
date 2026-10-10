@@ -1,0 +1,465 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Avishkar Sarang — Graphic Designer and Video Editor. Explore creative designs, thumbnails, branding and cinematic video edits.">
+<meta name="theme-color" content="#08080d">
+<title>Avishkar Sarang | Creative Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#08080d;
+  --panel:#11111a;
+  --white:#f7f5ff;
+  --muted:#a4a2b5;
+  --red:#ff3158;
+  --purple:#9b5cff;
+  --line:rgba(255,255,255,.1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  background:var(--bg);color:var(--white);
+  font-family:Inter,Arial,sans-serif;overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:radial-gradient(ellipse at 15% 15%,#5b17301e,transparent 42%),
+  radial-gradient(ellipse at 85% 50%,#5623a51a,transparent 45%);
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(1160px,90%);margin:auto}
+.gradient{
+  background:linear-gradient(100deg,#ff3158,#a66bff 55%,#ff82c8);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+header{
+  height:76px;position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;background:#08080dd9;
+  backdrop-filter:blur(18px);border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font:700 21px "Space Grotesk";letter-spacing:-1px}
+.logo span{color:var(--red)}
+.navlinks{display:flex;align-items:center;gap:28px}
+.navlinks a{font-size:13px;color:#c3c1d0;transition:.25s}
+.navlinks a:hover{color:#ff5877}
+.navbtn,.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  border:1px solid #ffffff24;border-radius:100px;padding:13px 20px;
+  font-size:13px;font-weight:700;transition:.3s;cursor:pointer;
+}
+.navbtn,.btn-primary{
+  background:linear-gradient(110deg,#ff3158,#9c52ff);
+  color:white;border:0;
+}
+.navbtn:hover,.btn:hover{transform:translateY(-3px);box-shadow:0 10px 35px #a044ff33}
+.menu-btn{display:none;background:none;border:0;color:white;font-size:27px}
+.hero{min-height:100vh;padding:145px 0 80px;display:flex;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;padding:9px 14px;
+  border:1px solid #ff315837;background:#ff31580b;border-radius:50px;
+  color:#ff8196;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+  margin-bottom:26px;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:#ff3158;box-shadow:0 0 12px #ff3158}
+h1{
+  font:700 clamp(48px,6.6vw,86px)/1.02 "Space Grotesk";
+  letter-spacing:-4px;margin-bottom:23px;
+}
+.hero-desc{max-width:510px;color:var(--muted);font-size:15px;line-height:1.9}
+.hero-buttons{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.stats{display:flex;gap:35px;margin-top:42px;flex-wrap:wrap}
+.stat strong{font:700 25px "Space Grotesk";display:block}
+.stat span{font-size:11px;color:var(--muted);display:block;margin-top:5px}
+.visual{position:relative;min-height:440px;display:grid;place-items:center}
+.orbit{
+  position:absolute;width:355px;height:355px;border-radius:50%;
+  border:1px solid #a66bff30;animation:spin 22s linear infinite;
+}
+.orbit:before,.orbit:after{
+  content:"";position:absolute;width:10px;height:10px;border-radius:50%;
+  background:var(--red);box-shadow:0 0 20px var(--red);
+}
+.orbit:before{top:40px;left:42px}
+.orbit:after{right:15px;bottom:100px;background:var(--purple);box-shadow:0 0 20px var(--purple)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.profile-card{
+  width:min(330px,90%);height:365px;position:relative;z-index:2;
+  border-radius:25px;border:1px solid #ffffff25;overflow:hidden;
+  background:linear-gradient(145deg,#241326,#10101a 55%,#2a153b);
+  box-shadow:0 25px 90px #0009,0 0 65px #9b5cff19;
+  display:flex;flex-direction:column;justify-content:flex-end;padding:25px;
+  animation:float 5s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+.profile-art{
+  position:absolute;inset:0;display:grid;place-items:center;overflow:hidden;
+  background:radial-gradient(circle at 50% 43%,#a044ff36,transparent 44%);
+}
+.profile-art .big-a{
+  font:700 250px/.8 "Space Grotesk";letter-spacing:-25px;
+  color:#ffffff0c;transform:translateX(-12px);
+}
+.profile-art:before{
+  content:"";position:absolute;width:185px;height:185px;border-radius:50%;
+  border:1px solid #ffffff21;box-shadow:0 0 80px #a044ff16;
+}
+.profile-art:after{
+  content:"CREATIVE MIND";position:absolute;top:35px;left:25px;
+  color:#ffffff80;font-size:9px;letter-spacing:4px;
+}
+.profile-info{position:relative;z-index:3}
+.profile-info small{color:#ff8098;letter-spacing:2px;font-size:10px}
+.profile-info h3{font:700 26px "Space Grotesk";margin-top:8px}
+.profile-info p{font-size:12px;color:#c3c1d0;margin-top:5px}
+.floating-tag{
+  position:absolute;z-index:4;background:#15131ff0;border:1px solid #ffffff20;
+  padding:13px 16px;border-radius:13px;font-size:12px;
+  box-shadow:0 12px 30px #0005;animation:float 4s ease-in-out infinite;
+}
+.tag-one{top:65px;right:-5px}
+.tag-two{bottom:53px;left:-5px;animation-delay:-2s}
+.section{padding:105px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:42px}
+.kicker{color:#ff6684;font-size:11px;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
+h2{font:700 clamp(32px,4.5vw,52px)/1.12 "Space Grotesk";letter-spacing:-1.7px}
+.section-head p{max-width:360px;color:var(--muted);font-size:13px;line-height:1.8}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.skill{
+  padding:24px;border:1px solid var(--line);background:#ffffff04;
+  border-radius:17px;transition:.3s;position:relative;overflow:hidden;
+}
+.skill:hover{transform:translateY(-6px);border-color:#a66bff65;background:#a66bff09}
+.skill-icon{font-size:28px;margin-bottom:20px}
+.skill h3{font-size:15px;margin-bottom:8px}
+.skill p{font-size:12px;line-height:1.7;color:var(--muted)}
+.skill-label{font-size:10px;color:#b68bff;margin-top:17px;display:block}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:28px}
+.filter{
+  border:1px solid var(--line);background:transparent;color:#c5c3d1;
+  padding:10px 16px;border-radius:50px;font-size:12px;cursor:pointer;transition:.25s;
+}
+.filter.active,.filter:hover{background:#ff315819;color:#ff7d96;border-color:#ff315858}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:19px}
+.project{
+  min-width:0;border:1px solid var(--line);border-radius:17px;overflow:hidden;
+  background:var(--panel);transition:.35s;
+}
+.project:hover{transform:translateY(-7px);border-color:#a66bff6b}
+.project-art{
+  aspect-ratio:4/3;display:grid;place-items:center;position:relative;
+  overflow:hidden;background:linear-gradient(135deg,#291321,#161126 55%,#30204c);
+}
+.project-art::before{
+  content:"";position:absolute;width:180px;height:180px;border:1px solid #ffffff21;
+  border-radius:50%;transition:.5s;
+}
+.project:hover .project-art::before{transform:scale(1.35)}
+.project-art .symbol{font:700 65px "Space Grotesk";color:#ffffffdb;z-index:1}
+.project-art .art-label{
+  position:absolute;bottom:15px;left:16px;font-size:9px;
+  letter-spacing:2px;color:#ffffff9c;
+}
+.project-info{padding:19px}
+.project-info h3{font-size:15px;margin-bottom:8px}
+.project-info p{font-size:12px;line-height:1.7;color:var(--muted)}
+.project-type{font-size:10px;color:#d39bff;display:block;margin-top:14px}
+.project.hidden{display:none}
+.notice{
+  margin-top:25px;border:1px dashed #ffffff25;padding:17px;border-radius:12px;
+  font-size:12px;color:var(--muted);line-height:1.8;
+}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:65px;align-items:center}
+.about-box{
+  min-height:310px;border:1px solid var(--line);border-radius:22px;
+  display:grid;place-items:center;position:relative;overflow:hidden;
+  background:radial-gradient(ellipse at center,#672b7d30,transparent 65%),#11111a;
+}
+.about-box .about-a{font:700 180px "Space Grotesk";color:#ffffff0c}
+.about-box span{position:absolute;bottom:25px;font-size:10px;letter-spacing:3px;color:#c9a5ff}
+.about-text p{color:var(--muted);font-size:14px;line-height:2;margin-top:20px}
+.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+.pill{border:1px solid var(--line);border-radius:50px;padding:9px 12px;font-size:11px;color:#d6d2e6}
+.contact-box{
+  border:1px solid #ffffff17;border-radius:25px;padding:55px;
+  text-align:center;position:relative;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 120%,#832c6c30,transparent 65%),#101019;
+}
+.contact-box h2{max-width:650px;margin:auto}
+.contact-box p{color:var(--muted);font-size:14px;line-height:1.9;margin:20px auto 27px;max-width:520px}
+footer{padding:30px 0;border-top:1px solid var(--line);margin-top:90px}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer p,footer a{font-size:11px;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s,transform .7s}
+.reveal.show{opacity:1;transform:translateY(0)}
+#topbtn{
+  position:fixed;bottom:22px;right:22px;z-index:90;width:43px;height:43px;
+  border-radius:50%;border:1px solid #ffffff2c;background:#181522;color:white;
+  cursor:pointer;opacity:0;pointer-events:none;transition:.3s;
+}
+#topbtn.show{opacity:1;pointer-events:auto}
+@media(max-width:800px){
+ .hero-grid,.about-grid{grid-template-columns:1fr}
+ .hero{padding-top:130px}
+ .visual{min-height:390px}
+ .skills{grid-template-columns:repeat(2,1fr)}
+ .projects{grid-template-columns:repeat(2,1fr)}
+ .section-head{align-items:start;flex-direction:column}
+ .contact-box{padding:38px 22px}
+ .about-grid{gap:28px}
+}
+@media(max-width:560px){
+ .navlinks{
+   display:none;position:absolute;top:76px;left:0;right:0;padding:24px 5%;
+   background:#0d0c14;border-bottom:1px solid var(--line);
+   flex-direction:column;align-items:flex-start;gap:22px
+ }
+ .navlinks.open{display:flex}
+ .navbtn{display:none}
+ .menu-btn{display:block}
+ h1{letter-spacing:-2.5px}
+ .hero-grid{gap:15px}
+ .visual{min-height:350px}
+ .orbit{width:285px;height:285px}
+ .profile-card{height:320px}
+ .tag-one{right:0}
+ .tag-two{left:0}
+ .skills{grid-template-columns:1fr 1fr;gap:10px}
+ .skill{padding:16px}
+ .skill h3{font-size:13px}
+ .projects{grid-template-columns:1fr}
+ .section{padding:75px 0}
+ .stats{gap:23px}
+ .stat strong{font-size:22px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}
+ .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <a href="#home" class="logo">AVISHKAR<span>.</span></a>
+    <nav class="navlinks" id="navlinks">
+      <a href="#home">Home</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">Portfolio</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="navbtn" href="#work">Explore Work ↗</a>
+    <button class="menu-btn" id="menubtn" aria-label="Open navigation">☰</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div class="reveal">
+    <div class="eyebrow"><span class="dot"></span> GRAPHIC DESIGNER & VIDEO EDITOR</div>
+    <h1>Ideas into<br><span class="gradient" id="typing">Visual Stories.</span></h1>
+    <p class="hero-desc">I create eye-catching designs, powerful visual identities and cinematic video edits that make brands stand out.</p>
+    <div class="hero-buttons">
+      <a class="btn btn-primary" href="#work">Explore My Work ↗</a>
+      <a class="btn" href="#contact">Let's Connect</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>01<span class="gradient" style="display:inline">+</span></strong><span>Year of Experience</span></div>
+      <div class="stat"><strong>06</strong><span>Creative Tools</span></div>
+      <div class="stat"><strong>∞</strong><span>Creative Ideas</span></div>
+    </div>
+  </div>
+
+  <div class="visual reveal">
+    <div class="orbit"></div>
+    <div class="profile-card">
+      <div class="profile-art"><div class="big-a">A</div></div>
+      <div class="profile-info">
+        <small>DESIGN • EDIT • CREATE</small>
+        <h3>Avishkar Sarang</h3>
+        <p>Turning imagination into visuals.</p>
+      </div>
+    </div>
+    <div class="floating-tag tag-one">✦ Creative Designer</div>
+    <div class="floating-tag tag-two">▶ Video Editor</div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="skills">
+ <div class="container">
+  <div class="section-head reveal">
+   <div><div class="kicker">WHAT I DO</div><h2>Creative skills.<br><span class="gradient">Powerful visuals.</span></h2></div>
+   <p>From the first idea to the final export, I turn concepts into polished creative work.</p>
+  </div>
+  <div class="skills">
+   <article class="skill reveal"><div class="skill-icon">🎨</div><h3>Graphic Design</h3><p>Creative social media posts, banners, posters and visual content.</p><span class="skill-label">DESIGN & COMPOSITION</span></article>
+   <article class="skill reveal"><div class="skill-icon">🎬</div><h3>Video Editing</h3><p>Reels, short videos, cinematic edits and engaging storytelling.</p><span class="skill-label">EDIT & STORYTELLING</span></article>
+   <article class="skill reveal"><div class="skill-icon">⚡</div><h3>Motion Graphics</h3><p>Animated typography, transitions and motion-based visuals.</p><span class="skill-label">MOTION & EFFECTS</span></article>
+   <article class="skill reveal"><div class="skill-icon">🖼️</div><h3>Thumbnails</h3><p>Bold YouTube thumbnails and attention-grabbing cover designs.</p><span class="skill-label">VISUAL IMPACT</span></article>
+   <article class="skill reveal"><div class="skill-icon">✦</div><h3>Branding</h3><p>Visual identity, logo concepts and consistent brand presentation.</p><span class="skill-label">IDENTITY & BRAND</span></article>
+   <article class="skill reveal"><div class="skill-icon">🎞️</div><h3>Color & Finishing</h3><p>Color correction, grading, effects and final video polish.</p><span class="skill-label">DETAIL & QUALITY</span></article>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="work">
+ <div class="container">
+  <div class="section-head reveal">
+   <div><div class="kicker">SELECTED CREATIONS</div><h2>My creative <span class="gradient">universe.</span></h2></div>
+   <p>A growing collection of designs, edits and visual experiments.</p>
+  </div>
+  <div class="filters reveal">
+   <button class="filter active" data-filter="all">All Work</button>
+   <button class="filter" data-filter="video">Video Editing</button>
+   <button class="filter" data-filter="design">Graphic Design</button>
+   <button class="filter" data-filter="thumb">Thumbnails</button>
+   <button class="filter" data-filter="brand">Posters & Branding</button>
+  </div>
+  <div class="projects" id="projectgrid">
+   <article class="project reveal" data-category="video">
+    <div class="project-art"><span class="symbol">▶</span><span class="art-label">VIDEO EDITING / 01</span></div>
+    <div class="project-info"><h3>Cinematic Video Edit</h3><p>Add your video preview or project here.</p><span class="project-type">VIDEO EDITING</span></div>
+   </article>
+   <article class="project reveal" data-category="design">
+    <div class="project-art" style="background:linear-gradient(135deg,#20163e,#3c1c39)"><span class="symbol">✳</span><span class="art-label">DESIGN / 02</span></div>
+    <div class="project-info"><h3>Social Media Design</h3><p>Showcase your best Instagram and social posts.</p><span class="project-type">GRAPHIC DESIGN</span></div>
+   </article>
+   <article class="project reveal" data-category="thumb">
+    <div class="project-art" style="background:linear-gradient(135deg,#31151c,#6b2a28)"><span class="symbol">T.</span><span class="art-label">THUMBNAIL / 03</span></div>
+    <div class="project-info"><h3>YouTube Thumbnail</h3><p>Feature your most eye-catching thumbnail designs.</p><span class="project-type">THUMBNAILS</span></div>
+   </article>
+   <article class="project reveal" data-category="brand">
+    <div class="project-art" style="background:linear-gradient(135deg,#122d36,#172044)"><span class="symbol">A®</span><span class="art-label">BRANDING / 04</span></div>
+    <div class="project-info"><h3>Brand Identity</h3><p>Present logos, identity systems and brand concepts.</p><span class="project-type">POSTERS & BRANDING</span></div>
+   </article>
+   <article class="project reveal" data-category="video">
+    <div class="project-art" style="background:linear-gradient(135deg,#281a3b,#15152d)"><span class="symbol">AE</span><span class="art-label">MOTION / 05</span></div>
+    <div class="project-info"><h3>Motion Graphics</h3><p>Show animated titles, transitions and visual effects.</p><span class="project-type">MOTION GRAPHICS</span></div>
+   </article>
+   <article class="project reveal" data-category="design">
+    <div class="project-art" style="background:linear-gradient(135deg,#34230e,#512535)"><span class="symbol">✦</span><span class="art-label">CREATIVE / 06</span></div>
+    <div class="project-info"><h3>Creative Experiments</h3><p>A space for your unique designs and personal projects.</p><span class="project-type">CREATIVE DESIGN</span></div>
+   </article>
+  </div>
+  <div class="notice">✦ These are sample project cards. Your actual photos, videos and designs can replace these placeholders when we connect your portfolio upload system.</div>
+ </div>
+</section>
+
+<section class="section" id="about">
+ <div class="container about-grid">
+  <div class="about-box reveal"><div class="about-a">AS</div><span>CREATIVE MINDSET · VISUAL THINKING</span></div>
+  <div class="about-text reveal">
+   <div class="kicker">A LITTLE ABOUT ME</div>
+   <h2>Hey, I'm <span class="gradient">Avishkar.</span></h2>
+   <p>I'm a Graphic Designer and Video Editor who enjoys transforming ideas into engaging visual experiences. My work combines design, storytelling, motion and attention to detail.</p>
+   <p>I'm always learning, experimenting and looking for new ways to make every project more impactful.</p>
+   <div class="pills">
+    <span class="pill">Adobe Photoshop</span><span class="pill">Illustrator</span>
+    <span class="pill">After Effects</span><span class="pill">Premiere Pro</span>
+    <span class="pill">Canva</span><span class="pill">CapCut</span>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="contact">
+ <div class="container">
+  <div class="contact-box reveal">
+   <div class="kicker">HAVE A PROJECT IN MIND?</div>
+   <h2>Let's create something <span class="gradient">extraordinary.</span></h2>
+   <p>Need creative design, video editing or visual content? Let's connect and bring your next idea to life.</p>
+   <a class="btn btn-primary" href="mailto:avishkarsarang46@gmail.com">✉ Contact Me</a>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container footer-inner">
+  <a href="#home" class="logo">AVISHKAR<span>.</span></a>
+  <p>© <span id="year"></span> Avishkar Sarang · Crafted with creativity.</p>
+  <a href="#home">Back to top ↑</a>
+ </div>
+</footer>
+
+<button id="topbtn" aria-label="Back to top">↑</button>
+
+<script>
+const menuButton = document.getElementById('menubtn');
+const nav = document.getElementById('navlinks');
+
+menuButton.addEventListener('click', () => {
+  nav.classList.toggle('open');
+  menuButton.textContent = nav.classList.contains('open') ? '×' : '☰';
+});
+
+nav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('open');
+    menuButton.textContent = '☰';
+  });
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {threshold: 0.12});
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+document.querySelectorAll('.filter').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll('.filter').forEach(b => b.classList.remove('active'));
+    button.classList.add('active');
+    const category = button.dataset.filter;
+    document.querySelectorAll('.project').forEach(project => {
+      const visible = category === 'all' || project.dataset.category === category;
+      project.classList.toggle('hidden', !visible);
+    });
+  });
+});
+
+const topButton = document.getElementById('topbtn');
+window.addEventListener('scroll', () => {
+  topButton.classList.toggle('show', window.scrollY > 450);
+});
+topButton.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+
+const words = ['Visual Stories.','Bold Designs.','Cinematic Edits.'];
+let wordIndex = 0;
+const typing = document.getElementById('typing');
+
+setInterval(() => {
+  wordIndex = (wordIndex + 1) % words.length;
+  typing.animate(
+    [{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(8px)'}],
+    {duration:220,fill:'forwards'}
+  ).onfinish = () => {
+    typing.textContent = words[wordIndex];
+    typing.animate(
+      [{opacity:0,transform:'translateY(-8px)'},{opacity:1,transform:'translateY(0)'}],
+      {duration:350,fill:'forwards'}
+    );
+  };
+}, 2600);
+</script>
+</body>
+</html>
